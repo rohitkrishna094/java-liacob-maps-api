@@ -25,4 +25,11 @@ public class DataService {
         return new RecoveryResponse(recoveryInput, recoveryData).toString();
     }
 
+    public RecoveryResponse getRecoverableResponse(RecoveryInput recoveryInput) {
+
+        // Get corresponding data from database Lets call it RecoveryData
+        RecoveryData recoveryData = recoveryDao.getRecoveryData();
+        return new RecoveryResponse(recoveryInput, recoveryData);
+    }
+
 }
